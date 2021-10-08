@@ -1,12 +1,10 @@
 package com.sunnyweather.android.ui.place
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.sunnyweather.android.logic.Repository
 import com.sunnyweather.android.logic.model.Place
 
-class PlaceViewModel: ViewModel() {
+class PlaceViewModel : ViewModel() {
 
     private val searchLiveData = MutableLiveData<String>()
 
@@ -16,7 +14,14 @@ class PlaceViewModel: ViewModel() {
         Repository.searchPlaces(query)
     }
 
-    fun searchPlaces(query: String){
+    fun searchPlaces(query: String) {
         searchLiveData.value = query
     }
+
+    fun savePlace(place: Place) = Repository.savePlace(place)
+
+    fun getSavedPlace() = Repository.getSavedPlace()
+
+    fun isPlaceSaved() = Repository.isPlaceSaved()
+
 }
