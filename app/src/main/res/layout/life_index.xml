@@ -1,192 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="15dp"
-    app:cardCornerRadius="4dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/life_index">
+
+            <TextView
+                android:id="@+id/meteorological_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="气象信息"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/weather_visibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="地表能见度"
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/meteorological_information"
+                app:layout_constraintTop_toTopOf="@+id/meteorological_information" />
+
+            <TextView
+                android:id="@+id/weather_visibility_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/weather_visibility"
+                app:layout_constraintStart_toStartOf="@+id/weather_visibility"
+                app:layout_constraintTop_toTopOf="@+id/weather_visibility" />
+
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿度"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/weather_visibility"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/weather_visibility" />
+
+            <TextView
+                android:id="@+id/humidity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/humidity"
+                app:layout_constraintStart_toStartOf="@+id/humidity"
+                app:layout_constraintTop_toTopOf="@+id/humidity" />
+
+
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:text="气压"
+                app:layout_constraintEnd_toEndOf="@+id/weather_visibility"
+                app:layout_constraintStart_toStartOf="@+id/weather_visibility"
+                app:layout_constraintTop_toTopOf="@+id/weather_visibility_text" />
+
+
+            <TextView
+                android:id="@+id/pressure_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/pressure"
+                app:layout_constraintStart_toStartOf="@+id/pressure"
+                app:layout_constraintTop_toTopOf="@+id/pressure" />
+
+
+            <TextView
+                android:id="@+id/wind_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="风力指数"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/pressure"
+                app:layout_constraintEnd_toEndOf="@+id/humidity"
+                app:layout_constraintStart_toStartOf="@+id/humidity"
+                app:layout_constraintTop_toTopOf="@+id/pressure" />
+
+            <TextView
+                android:id="@+id/wind_direction_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/wind_direction"
+                app:layout_constraintStart_toStartOf="@+id/wind_direction"
+                app:layout_constraintTop_toTopOf="@+id/wind_direction" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/life_index"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="生活指数"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="20sp"/>
+            android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:text="生活指数"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:id="@+id/coldRiskImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/ic_coldrisk" />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/coldRiskImg"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
-
-                    <TextView
+                    <ImageView
+                        android:id="@+id/coldRiskImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:text="感冒" />
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ic_coldrisk" />
 
-                    <TextView
-                        android:id="@+id/coldRiskText"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="16sp"
-                        android:textColor="?android:attr/textColorPrimary" />
-                </LinearLayout>
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/coldRiskImg"
+                        android:orientation="vertical">
 
-            </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="感冒"
+                            android:textSize="12sp" />
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/coldRiskText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="16sp" />
+                    </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/dressingImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/ic_dressing" />
+                </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/dressingImg"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1">
 
-                    <TextView
+                    <ImageView
+                        android:id="@+id/dressingImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:text="穿衣" />
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ic_dressing" />
 
-                    <TextView
-                        android:id="@+id/dressingText"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="16sp"
-                        android:textColor="?android:attr/textColorPrimary" />
-                </LinearLayout>
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/dressingImg"
+                        android:orientation="vertical">
 
-            </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="穿衣"
+                            android:textSize="12sp" />
 
-        </LinearLayout>
+                        <TextView
+                            android:id="@+id/dressingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="16sp" />
+                    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1">
+            </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/ultravioletImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/ic_ultraviolet" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_toEndOf="@id/ultravioletImg"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1">
 
-                    <TextView
+                    <ImageView
+                        android:id="@+id/ultravioletImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:text="实时紫外线" />
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ic_ultraviolet" />
 
-                    <TextView
-                        android:id="@+id/ultravioletText"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="16sp"
-                        android:textColor="?android:attr/textColorPrimary" />
-                </LinearLayout>
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/ultravioletImg"
+                        android:orientation="vertical">
 
-            </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="实时紫外线"
+                            android:textSize="12sp" />
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/ultravioletText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="16sp" />
+                    </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/carWashingImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/ic_carwashing" />
+                </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_toEndOf="@id/carWashingImg"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1">
 
-                    <TextView
+                    <ImageView
+                        android:id="@+id/carWashingImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:text="洗车" />
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ic_carwashing" />
 
-                    <TextView
-                        android:id="@+id/carWashingText"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="16sp"
-                        android:textColor="?android:attr/textColorPrimary" />
-                </LinearLayout>
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/carWashingImg"
+                        android:orientation="vertical">
 
-            </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="洗车"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/carWashingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>
