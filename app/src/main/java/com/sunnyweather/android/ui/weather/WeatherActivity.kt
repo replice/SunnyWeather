@@ -114,6 +114,12 @@ class WeatherActivity : AppCompatActivity() {
             temperatureInfo.text = tempText
             forecastLayout.addView(view)
         }
+        //填充气象信息里面的数据
+        weather_visibility_text.text = "${realtime.visibility.toInt().toString()} 千米"
+        humidity_text.text = "${realtime.humidity*100} %"
+        wind_direction_text.text = realtime.wind.direction.toInt().toString()
+        pressure_text.text = "${realtime.pressure.toInt() / 1000} 千帕"
+
         // 填充life_index.xml布局中的数据
         val lifeIndex = daily.lifeIndex
         coldRiskText.text = lifeIndex.coldRisk[0].desc
