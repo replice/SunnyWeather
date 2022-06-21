@@ -48,15 +48,26 @@ class PlaceFragment : Fragment() {
             if (content.isNotEmpty()) {
                 viewModel.searchPlaces(content)
             } else {
+                recyclerView_hot.visibility = View.VISIBLE
+                hot_city_text.visibility = View.VISIBLE
+                tvGetPos.visibility = View.VISIBLE
+                now_location_text.visibility = View.VISIBLE
+                tvCurLocation.visibility = View.VISIBLE
                 recyclerView.visibility = View.GONE
                 bgImageView.visibility = View.VISIBLE
                 viewModel.placeList.clear()
                 adapter.notifyDataSetChanged()
             }
         }
-        viewModel.placeLiveData.observe(this, Observer{ result ->
+
+        viewModel.placeLiveData.observe(viewLifecycleOwner, Observer{ result ->
             val places = result.getOrNull()
             if (places != null) {
+                recyclerView_hot.visibility = View.GONE
+                hot_city_text.visibility = View.GONE
+                tvGetPos.visibility = View.GONE
+                now_location_text.visibility = View.GONE
+                tvCurLocation.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
                 bgImageView.visibility = View.GONE
                 viewModel.placeList.clear()

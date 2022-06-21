@@ -27,6 +27,10 @@ android {
 }
 
 dependencies {
+
+
+
+    api 'me.jessyan:autosize:1.1.2'
     implementation 'me.relex:circleindicator:2.1.6'
     implementation 'com.airbnb.android:lottie:5.1.1'
     implementation 'com.qmuiteam:qmui:2.0.0-alpha10'

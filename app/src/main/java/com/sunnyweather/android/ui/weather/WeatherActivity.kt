@@ -126,7 +126,7 @@ class WeatherActivity : AppCompatActivity() {
         }
         //填充气象信息里面的数据
         weather_visibility_text.text = "${realtime.visibility.toInt().toString()} 千米"
-        humidity_text.text = "${realtime.humidity*100} %"
+        humidity_text.text = "${(realtime.humidity*100).toInt()} %"
         wind_direction_text.text = realtime.wind.direction.toInt().toString()
         pressure_text.text = "${realtime.pressure.toInt() / 1000} 千帕"
 
